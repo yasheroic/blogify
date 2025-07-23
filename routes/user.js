@@ -20,4 +20,9 @@ router.post("/signup",async(req,res)=>{
     return res.redirect("/")
 })
 
+router.post("/signin",async(req,res)=>{
+    
+
+})
+
 module.exports = router;
