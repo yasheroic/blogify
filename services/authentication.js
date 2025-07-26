@@ -1,5 +1,5 @@
 const JWT = require("jsonwebtoken");
-const secret = $uperMan;
+const secret = "$uperMan";
 
 function createTokenForUser(user) {
   const payload = {
@@ -8,15 +8,16 @@ function createTokenForUser(user) {
     profileImageURL: user.profileImageURL,
     role: user.role,
   };
-  const token = JWT.sign(payload,secret)
-  return token
+  const token = JWT.sign(payload, secret);
+  return token;
 }
 
-function verifyUserToken(token){
-    const payload = JWT.verify(token,secret)
-    return payload
+function verifyUserToken(token) {
+  const payload = JWT.verify(token, secret);
+  return payload;
 }
 
-module.exports={
-    createTokenForUser,verifyUserToken
-}
+module.exports = {
+  createTokenForUser,
+  verifyUserToken,
+};
