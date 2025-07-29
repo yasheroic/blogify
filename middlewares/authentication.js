@@ -12,7 +12,7 @@ function checkAuthenticationCookie(cookieName){
             req.user = userPayload
         } catch (error) {
         }
-        next()
+        return next()
     }
 }
 
