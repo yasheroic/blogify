@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const userRoute = require("./routes/user.js");
+const blogRoute = require("./routes/blog.js");
 const path = require("path");
 const app = express();
 const PORT = 3000;
@@ -20,12 +21,13 @@ app.use(cookieParser());
 app.use(checkAuthenticationCookie("token"));
 
 app.get("/", (req, res) => {
-  res.render("home",{
-    user:req.user
+  res.render("home", {
+    user: req.user,
   });
 });
 
 app.use("/user", userRoute);
+app.use("/blog", blogRoute);
 
 app.listen(PORT, () => {
   console.log(`App listening on server ${PORT}`);
