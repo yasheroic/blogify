@@ -4,7 +4,7 @@ const userRoute = require("./routes/user.js");
 const blogRoute = require("./routes/blog.js");
 const path = require("path");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const cookieParser = require("cookie-parser");
 const Blog = require("./models/blog.js")
 const {
@@ -12,7 +12,7 @@ const {
 } = require("./middlewares/authentication.js");
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/blogify")
+  .connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/blogify")
   .then((err) => console.log("MongoDB Connected"));
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));

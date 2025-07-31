@@ -1,9 +1,8 @@
-<nav
-  class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
-  data-bs-theme="dark"
->
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Blogify</a>
+<nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-pen-fancy me-2"></i>Blogify
+    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,36 +15,51 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">
+            <i class="fas fa-home me-1"></i>Home
+          </a>
         </li>
         <% if (locals.user) { %>
         <li class="nav-item">
-          <a class="nav-link" href="/blog/add-new">Add Blog</a>
+          <a class="nav-link" href="/blog/add-new">
+            <i class="fas fa-plus me-1"></i>Add Blog
+          </a>
         </li>
+        <% } %>
+      </ul>
+      <ul class="navbar-nav">
+        <% if (locals.user) { %>
         <li class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle d-flex align-items-center"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
+            <img src="<%= user.profileImageURL %>" alt="Profile" class="user-avatar me-2" style="width: 32px; height: 32px;">
             <%= user.fullName %>
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/user/logout">
+              <i class="fas fa-sign-out-alt me-2"></i>Logout
+            </a></li>
           </ul>
         </li>
-        <% } else{%>
+        <% } else { %>
         <li class="nav-item">
-          <a class="nav-link" href="/user/signin">Sign-In</a>
+          <a class="nav-link" href="/user/signin">
+            <i class="fas fa-sign-in-alt me-1"></i>Sign-In
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/user/signup">Create Acoount</a>
+          <a class="nav-link" href="/user/signup">
+            <i class="fas fa-user-plus me-1"></i>Create Account
+          </a>
         </li>
-        <% }%>
+        <% } %>
       </ul>
     </div>
   </div>
@@ -53,6 +67,8 @@
 
 <% if (locals.error) { %>
 <div class="container mt-4">
-  <div class="alert alert-danger" role="alert"><%= locals.error %></div>
+  <div class="alert alert-danger" role="alert">
+    <i class="fas fa-exclamation-triangle me-2"></i><%= locals.error %>
+  </div>
 </div>
 <% } %>
