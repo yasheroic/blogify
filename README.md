@@ -2,7 +2,6 @@
 
 A beautiful, modern blogging platform built with Node.js, Express, MongoDB, and EJS. Share your thoughts, stories, and ideas with the world through an intuitive and visually stunning interface.
 
-![Blogify Homepage](https://cdn.discordapp.com/attachments/1385851545517555746/1400583710646075514/Screenshot_2025-08-01_at_2.25.24_AM.png?ex=688d2aba&is=688bd93a&hm=1c6ed56a52df35c55ad12c17fff2fba9887f9fd51e4af766a8f06175e40c3766&)
 
 ## ✨ Features
 
